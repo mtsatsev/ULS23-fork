@@ -14,6 +14,7 @@ from nnunetv2.utilities.helpers import empty_cache
 
 class Uls23(SegmentationAlgorithm):
     def __init__(self):
+        print("OUR VERSION#1")
         self.image_metadata = None  # Keep track of the metadata of the input volume
         self.id = None  # Keep track of batched volume file name for export
         self.z_size = 128  # Number of voxels in the z-dimension for each VOI
@@ -66,6 +67,7 @@ class Uls23(SegmentationAlgorithm):
         3) Optional: preprocess volumes
         4) Predict per VOI
         """
+        print("OUR VERSION#1")
         start_load_time = time.time()
         # Input directory is determined by the algorithm interface on GC
         input_dir = Path("/input/images/stacked-3d-ct-lesion-volumes/")
@@ -101,6 +103,7 @@ class Uls23(SegmentationAlgorithm):
         :param spacings: list containing the spacing per VOI
         :return: list of numpy arrays containing the predicted lesion masks per VOI
         """
+        print("OUR VERSION#1")
         start_inference_time = time.time()
         predictions = []
         for i, voi_spacing in enumerate(spacings):
@@ -148,4 +151,5 @@ class Uls23(SegmentationAlgorithm):
 
 
 if __name__ == "__main__":
+    print("OUR VERSION#1")
     Uls23().start_pipeline()
